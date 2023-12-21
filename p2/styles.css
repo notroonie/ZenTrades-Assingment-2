@@ -1,0 +1,165 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 10px;
+    background: #fafafb;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #fff;
+}
+
+.container {
+    margin-top: 5px;
+    display: flex;
+    border: 1px solid lightgray;
+}
+
+div {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 5px;
+}
+
+.left,
+.right {
+    padding: 15px 10px;
+}
+
+.file-type>label,
+.char-encoding>label,
+.delimiter>label,
+.has-header>label {
+    display: inline-block;
+    width: 160px;
+    height: 20px;
+    vertical-align: middle;
+    margin-top: 5px;
+}
+
+.file-type>select,
+.char-encoding>select,
+.delimiter>select,
+.has-header>select {
+    width: 160px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+.has-header>label>span {
+    display: inline-block;
+    width: 130px;
+    height: 20px;
+}
+
+#display-handling>.left>label>input,
+.has-header>label>input {
+    cursor: pointer;
+}
+
+#select-file {
+    flex: 1;
+    min-width: 45vw;
+}
+
+#specify-format {
+    flex: 1;
+    min-width: 45vw;
+}
+
+#display-handling {
+    flex: 2;
+    min-width: 90vw;
+}
+
+.fields {
+    display: flex;
+}
+
+.fields>select {
+    padding: 10px;
+    height: 200px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button-container>button {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.available-fields,
+.displayed-fields {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+#available-fields,
+#displayed-fields {
+    height: 150px;
+    padding: 5px;
+    margin: 5px 10px;
+}
+
+.btn-next,
+.btn-cancel {
+    height: 30px;
+    width: 60px;
+    font-weight: bold;
+    border: 1px solid gray;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.btn-next {
+    color: white;
+    background-color: rgb(0, 167, 0);
+    position: absolute;
+    right: 100px;
+}
+
+.btn-cancel {
+    outline: none;
+    border: none;
+    color: rgb(158, 0, 0);
+    position: absolute;
+    right: 20px;
+}
+
+tr>th {
+    text-align: left;
+    background-color: #4772c7;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 8px;
+}
+
+tr>td {
+    text-align: right;
+    font-size: 14px;
+    padding: 5px;
+}
+
+tr:nth-child(odd) {
+    background-color: #d9e1f3;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+td:nth-child(2) {
+    text-align: left;
+}

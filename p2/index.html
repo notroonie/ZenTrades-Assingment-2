@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- papaparse library for parsing csv files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <title>Product Viewer</title>
+</head>
+
+<body>
+    <h4>
+        Import Products
+
+    </h4>
+
+    <main>
+        <div id="select-file" class="container">
+            <div class="left">Step 1:</div>
+            <div class="right">
+                <div>Select File</div>
+
+                <input type="file" id="file-input" accept=".json,.csv">
+
+                <div>Supported File Type(s): CSV, JSON</div>
+            </div>
+        </div>
+
+        <div id="specify-format" class="container">
+            <div class="left">Step 2:</div>
+            <div class="right">
+                <div>Specify Format</div>
+
+                <div class="file-type">
+                    <label for="file-type">File Type</label>
+                    <select name="file-type" id="file-type">
+                        <option value="json">json</option>
+                        <option value="csv">csv</option>
+                    </select>
+                </div>
+
+                <div class="char-encoding">
+                    <label for="char-encoding">Character Encoding</label>
+                    <select name="char-encoding" id="char-encoding">
+                        <option value="UTF-8">UTF-8</option>
+                        <option value="UTF-16">UTF-16</option>
+                        <option value="UTF-32">UTF-32</option>
+                        <option value="ASCII">ASCII</option>
+                        <option value="ISO-8859-1">ISO-8859-1</option>
+                        <option value="windows-1252">windows-1252</option>
+                    </select>
+                </div>
+
+                <div class="delimiter">
+                    <label for="delimiter">Delimiter</label>
+                    <select name="delimiter" id="delimiter">
+                        <option value="comma">comma</option>
+                        <option value="space">space</option>
+                        <option value="tab">tab</option>
+                    </select>
+                </div>
+
+                <div class="has-header">
+                    <label for="has-header">
+                        <span>Has Header</span>
+                        <input type="checkbox" name="has-header" id="has-header" checked>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="display-handling" class="container">
+            <div class="left">
+                <label for="step-3">
+                    <input type="checkbox" name="step-3" id="step-3">
+                    <span>Step 3:</span>
+                </label>
+            </div>
+
+            <div class="right">
+                <div>
+                    Display Handling
+                    <br>
+                    <br>
+                    Select the fields to be displayed
+                    <br>
+                    <br>
+                    <b>!!! Select file above to see field names and Check the checkbox to apply else default fields will be used</b>
+                </div>
+
+                <div class="fields">
+                    <div class="available-fields">
+                        <label for="available-fields">Available Fields</label>
+                        <select id="available-fields" multiple></select>
+                    </div>
+
+                    <div class="button-container">
+                        <button onclick="moveToDisplayed()"> &gt;&gt; </button>
+                        <button onclick="moveToAvailable()"> &lt;&lt; </button>
+                    </div>
+
+                    <div class="displayed-fields">
+                        <label for="displayed-fields">Fields to be Displayed</label>
+                        <select id="displayed-fields" multiple></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <button class="btn-next" onclick="loadData()">Next</button>
+    <button class="btn-cancel" onclick="window.location.reload()">Cancel</button>
+
+    <table id="product-list"></table>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
